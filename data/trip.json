@@ -3,7 +3,8 @@
     "title": "Portugal 2026",
     "subtitle": "Road trip familiar en camper",
     "startDate": "2026-08-10",
-    "travellers": "2 adultos · 2 niñas (7 y 11 años)"
+    "travellers": "2 adultos · 2 niñas (7 y 11 años)",
+    "version": "2.0"
   },
   "days": [
     {
@@ -13,31 +14,22 @@
       "summary": "Llegada directa al Lisboa Camping",
       "distance": "547 km",
       "duration": "6 h 45 min + paradas",
+      "cover": "road.webp",
       "items": [
         {
           "time": "10:00",
           "title": "Salida desde Chiclana",
-          "ref": ""
-        },
-        {
-          "time": "12:15",
-          "title": "Parada técnica breve",
-          "ref": ""
+          "ref": "RUT-01"
         },
         {
           "time": "14:00",
           "title": "Comida y descanso en ruta",
-          "ref": ""
-        },
-        {
-          "time": "15:15",
-          "title": "Continuación hacia Lisboa",
-          "ref": ""
+          "ref": "RUT-02"
         },
         {
           "time": "20:00",
           "title": "Llegada y check-in",
-          "ref": "LIS-CAM-01"
+          "ref": "LIS-CAM"
         }
       ]
     },
@@ -46,53 +38,44 @@
       "date": "2026-08-11",
       "title": "Lisboa histórica",
       "summary": "Feira da Ladra · Alfama · Castelo · Baixa · Chiado",
-      "distance": "A pie + transporte público",
+      "distance": "Transporte + paseo",
       "duration": "Día completo",
+      "cover": "lisboa.webp",
       "items": [
         {
           "time": "08:45",
           "title": "Salida del camping",
-          "ref": "LIS-TRA-01"
+          "ref": "LIS-TRA"
         },
         {
           "time": "10:00",
           "title": "Feira da Ladra",
-          "ref": "LIS-FDL-01"
-        },
-        {
-          "time": "11:45",
-          "title": "Subida hacia el castillo",
-          "ref": "LIS-CAS-01"
+          "ref": "LIS-FDL"
         },
         {
           "time": "12:00",
           "title": "Castelo de São Jorge",
-          "ref": "LIS-CAS-01"
+          "ref": "LIS-CAS"
         },
         {
           "time": "13:45",
-          "title": "Descenso por Alfama",
-          "ref": "LIS-ALF-01"
+          "title": "Alfama",
+          "ref": "LIS-ALF"
         },
         {
           "time": "14:30",
           "title": "Comida",
-          "ref": "LIS-COM-01"
+          "ref": "LIS-COM"
         },
         {
           "time": "16:30",
-          "title": "Praça do Comércio y Rua Augusta",
-          "ref": "LIS-BAI-01"
+          "title": "Baixa y Praça do Comércio",
+          "ref": "LIS-BAI"
         },
         {
           "time": "18:00",
           "title": "Chiado",
-          "ref": "LIS-CHI-01"
-        },
-        {
-          "time": "20:00",
-          "title": "Regreso al camping",
-          "ref": "LIS-TRA-01"
+          "ref": "LIS-CHI"
         }
       ]
     },
@@ -100,93 +83,334 @@
       "id": "D02",
       "date": "2026-08-12",
       "title": "Belém y Lisboa creativa",
-      "summary": "Jerónimos · Pastéis · río · MAAT · LX Factory",
-      "distance": "A pie + transporte público",
+      "summary": "Jerónimos · Pastéis · MAAT · LX Factory",
+      "distance": "Transporte + paseo",
       "duration": "Día completo",
+      "cover": "lisboa.webp",
       "items": [
         {
           "time": "09:00",
           "title": "Salida del camping",
-          "ref": "LIS-TRA-01"
+          "ref": "LIS-TRA"
         },
         {
           "time": "10:00",
-          "title": "Monasterio de los Jerónimos",
-          "ref": "LIS-BEL-01"
+          "title": "Belém",
+          "ref": "LIS-BEL"
         },
         {
           "time": "11:30",
           "title": "Pastéis de Belém",
-          "ref": "LIS-NAT-01"
-        },
-        {
-          "time": "12:15",
-          "title": "Monumento a los Descubrimientos",
-          "ref": "LIS-BEL-01"
-        },
-        {
-          "time": "13:00",
-          "title": "Torre de Belém y paseo",
-          "ref": "LIS-BEL-01"
+          "ref": "LIS-NAT"
         },
         {
           "time": "15:30",
-          "title": "Exterior y cubierta del MAAT",
-          "ref": "LIS-MAA-01"
+          "title": "Exterior del MAAT",
+          "ref": "LIS-MAA"
         },
         {
           "time": "17:00",
           "title": "LX Factory",
-          "ref": "LIS-LXF-01"
+          "ref": "LIS-LXF"
+        }
+      ]
+    },
+    {
+      "id": "D03",
+      "date": "2026-08-13",
+      "title": "Lisboa → Sintra",
+      "summary": "Palácio da Pena · centro histórico",
+      "distance": "30–40 km",
+      "duration": "Día completo",
+      "cover": "sintra.webp",
+      "items": [
+        {
+          "time": "09:00",
+          "title": "Aparcar y transporte local",
+          "ref": "SIN-TRA"
+        },
+        {
+          "time": "10:00",
+          "title": "Palácio da Pena",
+          "ref": "SIN-PEN"
+        },
+        {
+          "time": "14:00",
+          "title": "Centro histórico",
+          "ref": "SIN-CEN"
+        },
+        {
+          "time": "18:30",
+          "title": "Pernocta",
+          "ref": "SIN-CAM"
+        }
+      ]
+    },
+    {
+      "id": "D04",
+      "date": "2026-08-14",
+      "title": "Sintra → Óbidos → Nazaré",
+      "summary": "Villa medieval · mirador y playa",
+      "distance": "125 km aprox.",
+      "duration": "Día completo",
+      "cover": "obidos.webp",
+      "items": [
+        {
+          "time": "10:00",
+          "title": "Óbidos amurallado",
+          "ref": "OBI-CEN"
+        },
+        {
+          "time": "14:30",
+          "title": "Salida hacia Nazaré",
+          "ref": "RUT-03"
+        },
+        {
+          "time": "16:00",
+          "title": "Sítio y mirador",
+          "ref": "NAZ-SIT"
+        },
+        {
+          "time": "18:00",
+          "title": "Playa y paseo",
+          "ref": "NAZ-PRA"
         },
         {
           "time": "20:00",
-          "title": "Regreso al camping",
-          "ref": "LIS-TRA-01"
+          "title": "Pernocta",
+          "ref": "NAZ-CAM"
+        }
+      ]
+    },
+    {
+      "id": "D05",
+      "date": "2026-08-15",
+      "title": "Nazaré → Aveiro",
+      "summary": "Canales · moliceiros · Costa Nova",
+      "distance": "135 km aprox.",
+      "duration": "Día completo",
+      "cover": "aveiro.webp",
+      "items": [
+        {
+          "time": "11:00",
+          "title": "Llegada a Aveiro",
+          "ref": "AVE-CAM"
+        },
+        {
+          "time": "11:30",
+          "title": "Centro y canales",
+          "ref": "AVE-CEN"
+        },
+        {
+          "time": "16:00",
+          "title": "Costa Nova",
+          "ref": "AVE-COS"
+        }
+      ]
+    },
+    {
+      "id": "D06",
+      "date": "2026-08-16",
+      "title": "Aveiro → Oporto",
+      "summary": "Ribeira · Puente Luis I · Gaia",
+      "distance": "75 km aprox.",
+      "duration": "Tarde completa",
+      "cover": "porto.webp",
+      "items": [
+        {
+          "time": "11:00",
+          "title": "Instalación",
+          "ref": "POR-CAM"
+        },
+        {
+          "time": "13:00",
+          "title": "Ribeira",
+          "ref": "POR-RIB"
+        },
+        {
+          "time": "15:30",
+          "title": "Puente Luis I",
+          "ref": "POR-PUE"
+        },
+        {
+          "time": "17:00",
+          "title": "Vila Nova de Gaia",
+          "ref": "POR-GAI"
+        }
+      ]
+    },
+    {
+      "id": "D07",
+      "date": "2026-08-17",
+      "title": "Oporto y Gaia",
+      "summary": "São Bento · Bolhão · centro histórico · atardecer",
+      "distance": "Transporte + paseo",
+      "duration": "Día completo",
+      "cover": "porto.webp",
+      "items": [
+        {
+          "time": "09:00",
+          "title": "São Bento",
+          "ref": "POR-SBE"
+        },
+        {
+          "time": "10:00",
+          "title": "Mercado do Bolhão",
+          "ref": "POR-BOL"
+        },
+        {
+          "time": "12:00",
+          "title": "Centro histórico",
+          "ref": "POR-CEN"
+        },
+        {
+          "time": "16:00",
+          "title": "Gaia",
+          "ref": "POR-GAI"
+        },
+        {
+          "time": "19:00",
+          "title": "Atardecer sobre el Duero",
+          "ref": "POR-MIR"
+        }
+      ]
+    },
+    {
+      "id": "D08",
+      "date": "2026-08-18",
+      "title": "Oporto → Burgos",
+      "summary": "Etapa larga de regreso",
+      "distance": "550 km aprox.",
+      "duration": "6–7 h + paradas",
+      "cover": "burgos.webp",
+      "items": [
+        {
+          "time": "08:30",
+          "title": "Salida de Oporto",
+          "ref": "RUT-04"
+        },
+        {
+          "time": "17:30",
+          "title": "Llegada y pernocta",
+          "ref": "BUR-CAM"
+        },
+        {
+          "time": "19:00",
+          "title": "Catedral y Espolón",
+          "ref": "BUR-CEN"
+        }
+      ]
+    },
+    {
+      "id": "D09",
+      "date": "2026-08-19",
+      "title": "Burgos → Sabadell",
+      "summary": "Última etapa y llegada a casa",
+      "distance": "620 km aprox.",
+      "duration": "6–7 h + paradas",
+      "cover": "road.webp",
+      "items": [
+        {
+          "time": "08:30",
+          "title": "Salida de Burgos",
+          "ref": "RUT-05"
+        },
+        {
+          "time": "18:30",
+          "title": "Llegada aproximada a Sabadell",
+          "ref": "RUT-05"
         }
       ]
     }
   ],
   "cards": [
     {
-      "id": "LIS-CAM-01",
+      "id": "RUT-01",
+      "city": "Ruta",
+      "zone": "Carretera",
+      "title": "Chiclana → Lisboa",
+      "icon": "🚐",
+      "quick": [
+        "547 km aprox.",
+        "Entrada por Extremadura",
+        "Llegada directa"
+      ],
+      "detail": "Etapa larga pero viable saliendo a las 10:00. Revisar tráfico, peajes y ruta real el mismo día.",
+      "tags": [
+        "ruta",
+        "camper"
+      ],
+      "image": "road.webp",
+      "family": "",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "RUT-02",
+      "city": "Ruta",
+      "zone": "Descanso",
+      "title": "Comida en ruta",
+      "icon": "🌳",
+      "quick": [
+        "Objetivo 14:00",
+        "Sombra y mesas",
+        "Desvío mínimo"
+      ],
+      "detail": "Elegir un merendero o área recreativa próximo a la ruta real, con sombra y espacio para estirar las piernas.",
+      "tags": [
+        "comida",
+        "descanso"
+      ],
+      "image": "road.webp",
+      "family": "Una hora para comer y cambiar de conductor.",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "LIS-CAM",
       "city": "Lisboa",
-      "zone": "Camping",
+      "zone": "Camper",
       "title": "Lisboa Camping",
       "icon": "🚐",
       "quick": [
-        "Base durante 3 noches",
-        "No mover la camper por la ciudad",
-        "Transporte público desde la entrada"
+        "Base 3 noches",
+        "Dejar la camper instalada",
+        "Transporte público"
       ],
-      "detail": "Base prevista para las tres noches de Lisboa. La estrategia es dejar la camper instalada y realizar todas las visitas en transporte público. Conviene confirmar horario de recepción, acceso nocturno y conexión exacta con Carris pocos días antes del viaje.",
+      "detail": "Base elegida para Lisboa. Confirmar reserva, horario de recepción y parada de transporte.",
       "tags": [
-        "camper",
-        "alojamiento",
-        "servicios"
-      ]
+        "camping",
+        "pernocta"
+      ],
+      "image": "lisboa.webp",
+      "family": "",
+      "culture": "",
+      "practical": "Reservar con antelación para agosto."
     },
     {
-      "id": "LIS-TRA-01",
+      "id": "LIS-TRA",
       "city": "Lisboa",
       "zone": "Transporte",
-      "title": "Transporte público",
-      "icon": "🚋",
+      "title": "Navegante y transporte",
+      "icon": "🚇",
       "quick": [
-        "1 Navegante Ocasional por persona",
-        "Zapping para improvisar",
-        "Bono 24 h cuando haya muchos viajes"
+        "1 tarjeta por persona",
+        "Zapping flexible",
+        "24 h si se usa mucho"
       ],
-      "detail": "Comprar una tarjeta Navegante Ocasional para cada viajero. El saldo Zapping ofrece máxima flexibilidad. En días con bus, metro, tranvías y funiculares puede compensar el bono Carris + Metro de 24 horas. La tarjeta no se comparte. Revisar tarifas y líneas exactas antes del viaje.",
+      "detail": "Navegante Ocasional por viajero. Zapping para improvisar; valorar bono Carris + Metro de 24 horas en jornadas intensivas.",
       "tags": [
         "metro",
         "bus",
-        "tranvía",
-        "navegante"
-      ]
+        "tranvía"
+      ],
+      "image": "lisboa.webp",
+      "family": "",
+      "culture": "",
+      "practical": "Revisar tarifas y ruta exacta desde el camping antes del viaje."
     },
     {
-      "id": "LIS-FDL-01",
+      "id": "LIS-FDL",
       "city": "Lisboa",
       "zone": "Alfama",
       "title": "Feira da Ladra",
@@ -194,56 +418,62 @@
       "quick": [
         "Martes y sábados",
         "1 h 30 min",
-        "Gratis · llevar efectivo"
+        "Gratis"
       ],
-      "detail": "Mercadillo histórico de antigüedades y segunda mano. Misión para las niñas: localizar un juguete antiguo, una moneda, un libro raro, una muñeca y un objeto misterioso. Llegar temprano ayuda a evitar el calor y las aglomeraciones.",
+      "detail": "Mercadillo de antigüedades y segunda mano. Llegar temprano y llevar algo de efectivo.",
       "tags": [
         "mercadillo",
-        "niñas",
-        "gratis",
-        "antigüedades"
-      ]
+        "gratis"
+      ],
+      "image": "lisboa.webp",
+      "family": "Buscar juguete antiguo, moneda, libro raro, muñeca y objeto misterioso.",
+      "culture": "Observar materiales, usos y épocas.",
+      "practical": ""
     },
     {
-      "id": "LIS-ALF-01",
+      "id": "LIS-ALF",
       "city": "Lisboa",
       "zone": "Alfama",
       "title": "Alfama",
       "icon": "🏘️",
       "quick": [
         "Barrio más antiguo",
-        "Recorrerlo bajando",
-        "Azulejos, fado y miradores"
+        "Recorrer bajando",
+        "Azulejos y miradores"
       ],
-      "detail": "La mejor forma de recorrer Alfama con niñas es comenzar arriba y bajar tranquilamente. Observar azulejos, puertas, ropa tendida, pequeñas plazas, gatos y músicos. Es una zona de pavimento irregular: calzado cómodo y agua.",
+      "detail": "Calles estrechas y trazado anterior a los coches. Paseo pausado con calzado cómodo.",
       "tags": [
         "barrio",
-        "paseo",
-        "cultura",
-        "fotografía"
-      ]
+        "historia"
+      ],
+      "image": "lisboa.webp",
+      "family": "Reto de fotos: azulejo, gato, balcón y puerta.",
+      "culture": "Entender cómo era una ciudad medieval.",
+      "practical": ""
     },
     {
-      "id": "LIS-CAS-01",
+      "id": "LIS-CAS",
       "city": "Lisboa",
       "zone": "Alfama",
       "title": "Castelo de São Jorge",
       "icon": "🏰",
       "quick": [
         "1 h 30 min",
-        "Grandes vistas",
-        "Pavos reales y murallas"
+        "Vistas",
+        "Murallas y pavos reales"
       ],
-      "detail": "Visita cultural principal del día histórico. Misiones: encontrar el cañón más grande, contar pavos reales, localizar la mejor vista y hacer la foto familiar. Para reducir cuestas, usar los elevadores públicos de acceso a la zona del castillo o valorar el autobús 737.",
+      "detail": "Visita monumental principal. Consultar entrada y horarios oficiales.",
       "tags": [
         "castillo",
-        "historia",
-        "niñas",
-        "mirador"
-      ]
+        "historia"
+      ],
+      "image": "lisboa.webp",
+      "family": "Buscar cañones, pavos reales y la mejor vista.",
+      "culture": "Diferenciar castillo, muralla y ciudad.",
+      "practical": ""
     },
     {
-      "id": "LIS-BAI-01",
+      "id": "LIS-BAI",
       "city": "Lisboa",
       "zone": "Baixa",
       "title": "Baixa y Praça do Comércio",
@@ -251,128 +481,646 @@
       "quick": [
         "Zona llana",
         "Rua Augusta",
-        "Descanso junto al Tajo"
+        "Tajo"
       ],
-      "detail": "Área reconstruida tras el terremoto de 1755. Paseo por Praça do Comércio, Arco da Rua Augusta y calles de la Baixa. Buen momento para descansar, observar la calçada portuguesa y explicar cómo se reconstruyó la ciudad.",
+      "detail": "Zona reconstruida tras el terremoto de 1755, con calles rectas y plazas amplias.",
       "tags": [
-        "historia",
-        "plaza",
-        "paseo",
-        "terremoto"
-      ]
+        "terremoto",
+        "plaza"
+      ],
+      "image": "lisboa.webp",
+      "family": "",
+      "culture": "Comparar Baixa con el trazado de Alfama.",
+      "practical": ""
     },
     {
-      "id": "LIS-CHI-01",
+      "id": "LIS-CHI",
       "city": "Lisboa",
       "zone": "Chiado",
       "title": "Chiado",
       "icon": "📚",
       "quick": [
         "Librerías y cafés",
-        "Ambiente de tarde",
-        "Atajo por Baixa-Chiado"
+        "Tarde",
+        "Atajo Baixa-Chiado"
       ],
-      "detail": "Barrio cultural y comercial. Se puede aprovechar el paso interior de la estación Baixa-Chiado para evitar parte de la subida. Ideal para librerías, una parada dulce o compras pequeñas.",
+      "detail": "Barrio cultural y comercial para cerrar el día sin prisas.",
       "tags": [
         "libros",
-        "compras",
-        "cafés",
-        "paseo"
-      ]
+        "cafés"
+      ],
+      "image": "lisboa.webp",
+      "family": "Elegir una tienda curiosa y un recuerdo económico.",
+      "culture": "",
+      "practical": ""
     },
     {
-      "id": "LIS-BEL-01",
+      "id": "LIS-BEL",
       "city": "Lisboa",
       "zone": "Belém",
-      "title": "Belém",
+      "title": "Belém y los Descubrimientos",
       "icon": "⚓",
       "quick": [
         "Medio día",
-        "Descubrimientos portugueses",
-        "Jerónimos, torre y río"
+        "Jerónimos y Torre",
+        "Paseo junto al Tajo"
       ],
-      "detail": "Zona monumental vinculada a la expansión marítima portuguesa. Priorizar el Monasterio de los Jerónimos, el Monumento a los Descubrimientos y el paseo exterior junto a la Torre de Belém. Alternar cultura con descansos junto al río.",
+      "detail": "Zona monumental relacionada con la expansión marítima portuguesa.",
       "tags": [
         "historia",
-        "monumentos",
-        "río",
-        "familia"
-      ]
+        "monumentos"
+      ],
+      "image": "lisboa.webp",
+      "family": "Buscar barcos, escudos y esferas armilares.",
+      "culture": "Hablar de navegación, intercambio y colonización.",
+      "practical": ""
     },
     {
-      "id": "LIS-NAT-01",
+      "id": "LIS-NAT",
       "city": "Lisboa",
       "zone": "Belém",
       "title": "Pastéis de Belém",
       "icon": "🥐",
       "quick": [
         "Parada dulce",
-        "Comparar con otros pastéis",
-        "Puntuar del 1 al 10"
+        "Recién hechos",
+        "Puntuación familiar"
       ],
-      "detail": "Parada gastronómica para probar el pastel más conocido de Belém. Propuesta familiar: cada persona lo puntúa del 1 al 10 y al final del viaje se elige el mejor pastel de nata de Portugal.",
+      "detail": "Probarlos sin convertir una cola excesiva en obligación.",
       "tags": [
         "dulce",
-        "comida",
-        "niñas"
-      ]
+        "gastronomía"
+      ],
+      "image": "lisboa.webp",
+      "family": "Puntuar sabor, textura y presentación.",
+      "culture": "",
+      "practical": ""
     },
     {
-      "id": "LIS-MAA-01",
+      "id": "LIS-MAA",
       "city": "Lisboa",
       "zone": "Belém",
       "title": "MAAT exterior",
       "icon": "🎨",
       "quick": [
         "Arquitectura contemporánea",
-        "Exterior y cubierta",
-        "Buenas fotos"
+        "Cubierta",
+        "Fotos"
       ],
-      "detail": "El exterior del museo y su cubierta ofrecen una pausa visual contemporánea junto al Tajo. Las exposiciones interiores pueden ser de pago; la ficha se centra en la experiencia exterior.",
+      "detail": "Exterior y entorno junto al río. Confirmar qué zonas son gratuitas.",
       "tags": [
         "arte",
-        "arquitectura",
-        "gratis",
-        "fotografía"
-      ]
+        "arquitectura"
+      ],
+      "image": "lisboa.webp",
+      "family": "",
+      "culture": "Comparar arquitectura histórica y contemporánea.",
+      "practical": ""
     },
     {
-      "id": "LIS-LXF-01",
+      "id": "LIS-LXF",
       "city": "Lisboa",
       "zone": "Alcântara",
       "title": "LX Factory",
       "icon": "🎨",
       "quick": [
         "Arte urbano",
-        "Tiendas y librería",
-        "Ambiente familiar"
+        "Librería",
+        "Tiendas"
       ],
-      "detail": "Antiguo complejo industrial transformado en espacio creativo. Interesa por los murales, tiendas, cafeterías y la librería. Buen cierre de un día cultural más relajado.",
+      "detail": "Antiguo complejo industrial convertido en espacio creativo.",
       "tags": [
         "arte urbano",
-        "tiendas",
-        "libros",
-        "familia"
-      ]
+        "libros"
+      ],
+      "image": "lisboa.webp",
+      "family": "Elegir el mural favorito.",
+      "culture": "",
+      "practical": ""
     },
     {
-      "id": "LIS-COM-01",
+      "id": "LIS-COM",
       "city": "Lisboa",
-      "zone": "Comida",
+      "zone": "Restaurantes",
       "title": "Restaurantes candidatos",
       "icon": "🍽️",
       "quick": [
         "Lisboa Tu & Eu",
         "Zé da Mouraria",
-        "As Bifanas do Afonso"
+        "Bifanas do Afonso"
       ],
-      "detail": "Lista provisional: Lisboa Tu & Eu para cocina portuguesa y ambiente pequeño; Zé da Mouraria para platos abundantes y bacalao; As Bifanas do Afonso para una comida rápida y económica. Confirmar horarios, descansos semanales y reservas antes del viaje.",
+      "detail": "Otros candidatos: D’Bacalhau, Portugália Belém y Clube do Bacalhau. Confirmar precios y horarios.",
       "tags": [
         "restaurantes",
-        "económico",
-        "bacalao",
-        "bifana"
-      ]
+        "económico"
+      ],
+      "image": "lisboa.webp",
+      "family": "",
+      "culture": "",
+      "practical": "Elegir por cercanía al itinerario."
+    },
+    {
+      "id": "SIN-TRA",
+      "city": "Sintra",
+      "zone": "Logística",
+      "title": "Moverse por Sintra",
+      "icon": "🚌",
+      "quick": [
+        "Aparcar fuera",
+        "Transporte local",
+        "Evitar centro en camper"
+      ],
+      "detail": "Sintra tiene accesos complejos. Dejar la camper fuera y usar transporte local.",
+      "tags": [
+        "parking",
+        "bus"
+      ],
+      "image": "sintra.webp",
+      "family": "",
+      "culture": "",
+      "practical": "Reservar Pena con hora."
+    },
+    {
+      "id": "SIN-PEN",
+      "city": "Sintra",
+      "zone": "Monumentos",
+      "title": "Palácio da Pena",
+      "icon": "🏰",
+      "quick": [
+        "Visita principal",
+        "Reserva horaria",
+        "Romanticismo"
+      ],
+      "detail": "Palacio romántico del siglo XIX. Priorizarlo frente a encadenar demasiados monumentos.",
+      "tags": [
+        "palacio",
+        "historia"
+      ],
+      "image": "sintra.webp",
+      "family": "Buscar torres, colores y criaturas.",
+      "culture": "Diferenciar palacio de castillo defensivo.",
+      "practical": ""
+    },
+    {
+      "id": "SIN-CEN",
+      "city": "Sintra",
+      "zone": "Centro",
+      "title": "Centro histórico",
+      "icon": "🏘️",
+      "quick": [
+        "Paseo corto",
+        "Tiendas",
+        "Palacio Nacional exterior"
+      ],
+      "detail": "Paseo relajado después de Pena.",
+      "tags": [
+        "centro",
+        "paseo"
+      ],
+      "image": "sintra.webp",
+      "family": "",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "SIN-CAM",
+      "city": "Sintra",
+      "zone": "Camper",
+      "title": "Pernocta Sintra",
+      "icon": "🚐",
+      "quick": [
+        "Área autorizada",
+        "Plan B de pago",
+        "Llegar con margen"
+      ],
+      "detail": "Referencia inicial: área de Santa Susana / São João das Lampas. Verificar situación y normativa.",
+      "tags": [
+        "pernocta",
+        "camper"
+      ],
+      "image": "sintra.webp",
+      "family": "",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "OBI-CEN",
+      "city": "Óbidos",
+      "zone": "Centro",
+      "title": "Óbidos amurallado",
+      "icon": "🛡️",
+      "quick": [
+        "2–3 horas",
+        "Calles medievales",
+        "Murallas con precaución"
+      ],
+      "detail": "Villa amurallada de casas blancas. Algunos tramos de muralla carecen de protección.",
+      "tags": [
+        "medieval",
+        "murallas"
+      ],
+      "image": "obidos.webp",
+      "family": "Buscar puerta azul, gato, bandera y flores.",
+      "culture": "Comprender para qué servían las murallas.",
+      "practical": ""
+    },
+    {
+      "id": "NAZ-SIT",
+      "city": "Nazaré",
+      "zone": "Sítio",
+      "title": "Sítio y mirador",
+      "icon": "🌊",
+      "quick": [
+        "Vista de la playa",
+        "Funicular opcional",
+        "Atardecer"
+      ],
+      "detail": "La parte alta ofrece la imagen más completa de Nazaré.",
+      "tags": [
+        "mirador",
+        "olas"
+      ],
+      "image": "nazare.webp",
+      "family": "",
+      "culture": "Explicar el cañón submarino y las grandes olas.",
+      "practical": ""
+    },
+    {
+      "id": "NAZ-PRA",
+      "city": "Nazaré",
+      "zone": "Playa",
+      "title": "Playa y paseo",
+      "icon": "🏖️",
+      "quick": [
+        "Descanso",
+        "Ambiente marinero",
+        "Mar frío y fuerte"
+      ],
+      "detail": "Comprobar siempre bandera y condiciones del baño.",
+      "tags": [
+        "playa",
+        "familia"
+      ],
+      "image": "nazare.webp",
+      "family": "",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "NAZ-CAM",
+      "city": "Nazaré",
+      "zone": "Camper",
+      "title": "Pernocta Nazaré",
+      "icon": "🚐",
+      "quick": [
+        "Área autorizada",
+        "Llegar con luz",
+        "Plan B"
+      ],
+      "detail": "Priorizar camperpark o área autorizada y verificar que sigue operativa.",
+      "tags": [
+        "pernocta",
+        "camper"
+      ],
+      "image": "nazare.webp",
+      "family": "",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "AVE-CEN",
+      "city": "Aveiro",
+      "zone": "Centro",
+      "title": "Canales de Aveiro",
+      "icon": "🚤",
+      "quick": [
+        "2–3 horas",
+        "Moliceiros",
+        "Art Nouveau"
+      ],
+      "detail": "Paseo por canales, puentes y fachadas. El barco es opcional.",
+      "tags": [
+        "canales",
+        "arquitectura"
+      ],
+      "image": "aveiro.webp",
+      "family": "Contar barcos y proas pintadas.",
+      "culture": "Relacionar ciudad, ría y sal.",
+      "practical": ""
+    },
+    {
+      "id": "AVE-COS",
+      "city": "Aveiro",
+      "zone": "Costa Nova",
+      "title": "Costa Nova",
+      "icon": "🏠",
+      "quick": [
+        "Casas rayadas",
+        "Playa",
+        "Fotografía"
+      ],
+      "detail": "Paseo corto entre palheiros de colores y playa.",
+      "tags": [
+        "casas",
+        "playa"
+      ],
+      "image": "aveiro.webp",
+      "family": "Elegir la combinación de rayas favorita.",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "AVE-CAM",
+      "city": "Aveiro",
+      "zone": "Camper",
+      "title": "Pernocta Aveiro",
+      "icon": "🚐",
+      "quick": [
+        "Canal São Roque",
+        "Alternativa Costa Nova",
+        "Camping de respaldo"
+      ],
+      "detail": "Confirmar área operativa, normativa y ocupación.",
+      "tags": [
+        "pernocta",
+        "camper"
+      ],
+      "image": "aveiro.webp",
+      "family": "",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "POR-CAM",
+      "city": "Oporto",
+      "zone": "Camper",
+      "title": "Pernocta Oporto / Gaia",
+      "icon": "🚐",
+      "quick": [
+        "2 noches",
+        "Buena conexión",
+        "Reserva aconsejable"
+      ],
+      "detail": "Referencias iniciales: Porto Motorhome Park / Perafita y campings de Gaia. Confirmar transporte.",
+      "tags": [
+        "pernocta",
+        "camper"
+      ],
+      "image": "porto.webp",
+      "family": "",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "POR-RIB",
+      "city": "Oporto",
+      "zone": "Ribeira",
+      "title": "Ribeira",
+      "icon": "🏘️",
+      "quick": [
+        "Duero",
+        "Casas históricas",
+        "Ambiente"
+      ],
+      "detail": "Paseo por la zona histórica junto al río.",
+      "tags": [
+        "río",
+        "historia"
+      ],
+      "image": "porto.webp",
+      "family": "",
+      "culture": "Entender cómo el río impulsó el comercio.",
+      "practical": ""
+    },
+    {
+      "id": "POR-PUE",
+      "city": "Oporto",
+      "zone": "Centro",
+      "title": "Puente Luis I",
+      "icon": "🌉",
+      "quick": [
+        "Oporto y Gaia",
+        "Dos niveles",
+        "Vistas"
+      ],
+      "detail": "Cruzar con atención, especialmente en el tablero superior compartido con metro.",
+      "tags": [
+        "puente",
+        "ingeniería"
+      ],
+      "image": "porto.webp",
+      "family": "Comparar los puentes visibles.",
+      "culture": "Observar una gran estructura metálica.",
+      "practical": ""
+    },
+    {
+      "id": "POR-GAI",
+      "city": "Oporto",
+      "zone": "Gaia",
+      "title": "Vila Nova de Gaia",
+      "icon": "🍇",
+      "quick": [
+        "Paseo fluvial",
+        "Bodegas",
+        "Vista de Oporto"
+      ],
+      "detail": "Las bodegas históricas explican el comercio del vino de Oporto.",
+      "tags": [
+        "vino",
+        "río"
+      ],
+      "image": "porto.webp",
+      "family": "",
+      "culture": "Comprender por qué las bodegas están en Gaia.",
+      "practical": ""
+    },
+    {
+      "id": "POR-SBE",
+      "city": "Oporto",
+      "zone": "Centro",
+      "title": "Estación de São Bento",
+      "icon": "🚉",
+      "quick": [
+        "Azulejos",
+        "Visita breve",
+        "Estación activa"
+      ],
+      "detail": "Paneles de azulejos con escenas históricas.",
+      "tags": [
+        "azulejos",
+        "tren"
+      ],
+      "image": "porto.webp",
+      "family": "Elegir una escena e imaginar su historia.",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "POR-BOL",
+      "city": "Oporto",
+      "zone": "Centro",
+      "title": "Mercado do Bolhão",
+      "icon": "🧺",
+      "quick": [
+        "Productos locales",
+        "Mercado tradicional",
+        "Comida"
+      ],
+      "detail": "Buen lugar para observar productos y vida cotidiana.",
+      "tags": [
+        "mercado",
+        "comida"
+      ],
+      "image": "porto.webp",
+      "family": "Buscar tres productos poco habituales.",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "POR-CEN",
+      "city": "Oporto",
+      "zone": "Centro",
+      "title": "Centro histórico",
+      "icon": "🏛️",
+      "quick": [
+        "Clérigos exterior",
+        "Calles y librerías",
+        "Cuestas"
+      ],
+      "detail": "Seleccionar pocos puntos y evitar colas innecesarias.",
+      "tags": [
+        "centro",
+        "historia"
+      ],
+      "image": "porto.webp",
+      "family": "",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "POR-MIR",
+      "city": "Oporto",
+      "zone": "Miradores",
+      "title": "Atardecer en el Duero",
+      "icon": "🌅",
+      "quick": [
+        "Gaia o Jardim do Morro",
+        "Llegar con margen",
+        "Concurrido"
+      ],
+      "detail": "Elegir el punto según cansancio y transporte de regreso.",
+      "tags": [
+        "atardecer",
+        "fotografía"
+      ],
+      "image": "porto.webp",
+      "family": "",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "BUR-CAM",
+      "city": "Burgos",
+      "zone": "Camper",
+      "title": "Pernocta Burgos",
+      "icon": "🚐",
+      "quick": [
+        "Área autorizada",
+        "Una noche",
+        "Acceso al centro"
+      ],
+      "detail": "Confirmar área operativa y servicios antes de la llegada.",
+      "tags": [
+        "pernocta",
+        "camper"
+      ],
+      "image": "burgos.webp",
+      "family": "",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "BUR-CEN",
+      "city": "Burgos",
+      "zone": "Centro",
+      "title": "Catedral y Espolón",
+      "icon": "⛪",
+      "quick": [
+        "1–2 horas",
+        "Exterior de catedral",
+        "Paseo ligero"
+      ],
+      "detail": "Después de una etapa larga, limitar la visita a un paseo tranquilo.",
+      "tags": [
+        "catedral",
+        "gótico"
+      ],
+      "image": "burgos.webp",
+      "family": "",
+      "culture": "Reconocer arcos apuntados, altura y vidrieras.",
+      "practical": ""
+    },
+    {
+      "id": "RUT-03",
+      "city": "Ruta",
+      "zone": "Carretera",
+      "title": "Óbidos → Nazaré",
+      "icon": "🚐",
+      "quick": [
+        "40 km aprox.",
+        "Etapa corta",
+        "Llegada por la tarde"
+      ],
+      "detail": "Trayecto sencillo hacia la costa.",
+      "tags": [
+        "ruta"
+      ],
+      "image": "road.webp",
+      "family": "",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "RUT-04",
+      "city": "Ruta",
+      "zone": "Carretera",
+      "title": "Oporto → Burgos",
+      "icon": "🚐",
+      "quick": [
+        "550 km aprox.",
+        "Etapa larga",
+        "Dos paradas"
+      ],
+      "detail": "Salida temprana y turnos de conducción.",
+      "tags": [
+        "ruta",
+        "regreso"
+      ],
+      "image": "road.webp",
+      "family": "",
+      "culture": "",
+      "practical": ""
+    },
+    {
+      "id": "RUT-05",
+      "city": "Ruta",
+      "zone": "Carretera",
+      "title": "Burgos → Sabadell",
+      "icon": "🚐",
+      "quick": [
+        "620 km aprox.",
+        "Etapa final",
+        "Paradas regulares"
+      ],
+      "detail": "Mantener flexibilidad en la hora de llegada.",
+      "tags": [
+        "ruta",
+        "regreso"
+      ],
+      "image": "road.webp",
+      "family": "",
+      "culture": "",
+      "practical": ""
     }
   ]
 }
