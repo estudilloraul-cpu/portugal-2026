@@ -1,0 +1,22 @@
+{
+  "name": "Explorer Family · Portugal 2026",
+  "short_name": "Portugal 2026",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f2e8",
+  "theme_color": "#164e63",
+  "description": "Guía familiar offline para el road trip Portugal 2026",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

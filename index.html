@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#164e63">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Portugal 2026">
+  <title>Explorer Family · Portugal 2026</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">EXPLORER FAMILY</p>
+      <h1>Portugal 2026</h1>
+    </div>
+    <button id="installBtn" class="ghost hidden" type="button">Instalar</button>
+  </header>
+
+  <main>
+    <section id="homeView" class="view active"></section>
+    <section id="daysView" class="view"></section>
+    <section id="cardsView" class="view"></section>
+    <section id="detailView" class="view"></section>
+    <section id="settingsView" class="view"></section>
+  </main>
+
+  <nav class="bottomnav" aria-label="Navegación principal">
+    <button data-view="homeView" class="active">🏠<span>Inicio</span></button>
+    <button data-view="daysView">📅<span>Días</span></button>
+    <button data-view="cardsView">🗂️<span>Fichas</span></button>
+    <button data-view="settingsView">⚙️<span>Ajustes</span></button>
+  </nav>
+
+  <template id="dayTemplate">
+    <article class="card day-card">
+      <div class="card-head">
+        <div>
+          <span class="code"></span>
+          <h2></h2>
+          <p class="muted summary"></p>
+        </div>
+        <button class="edit-day ghost" type="button">Editar</button>
+      </div>
+      <div class="chips"></div>
+      <div class="timeline"></div>
+    </article>
+  </template>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
