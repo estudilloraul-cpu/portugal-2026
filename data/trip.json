@@ -1,1 +1,378 @@
-
+{
+  "trip": {
+    "title": "Portugal 2026",
+    "subtitle": "Road trip familiar en camper",
+    "startDate": "2026-08-10",
+    "travellers": "2 adultos · 2 niñas (7 y 11 años)"
+  },
+  "days": [
+    {
+      "id": "D00",
+      "date": "2026-08-10",
+      "title": "Chiclana → Lisboa",
+      "summary": "Llegada directa al Lisboa Camping",
+      "distance": "547 km",
+      "duration": "6 h 45 min + paradas",
+      "items": [
+        {
+          "time": "10:00",
+          "title": "Salida desde Chiclana",
+          "ref": ""
+        },
+        {
+          "time": "12:15",
+          "title": "Parada técnica breve",
+          "ref": ""
+        },
+        {
+          "time": "14:00",
+          "title": "Comida y descanso en ruta",
+          "ref": ""
+        },
+        {
+          "time": "15:15",
+          "title": "Continuación hacia Lisboa",
+          "ref": ""
+        },
+        {
+          "time": "20:00",
+          "title": "Llegada y check-in",
+          "ref": "LIS-CAM-01"
+        }
+      ]
+    },
+    {
+      "id": "D01",
+      "date": "2026-08-11",
+      "title": "Lisboa histórica",
+      "summary": "Feira da Ladra · Alfama · Castelo · Baixa · Chiado",
+      "distance": "A pie + transporte público",
+      "duration": "Día completo",
+      "items": [
+        {
+          "time": "08:45",
+          "title": "Salida del camping",
+          "ref": "LIS-TRA-01"
+        },
+        {
+          "time": "10:00",
+          "title": "Feira da Ladra",
+          "ref": "LIS-FDL-01"
+        },
+        {
+          "time": "11:45",
+          "title": "Subida hacia el castillo",
+          "ref": "LIS-CAS-01"
+        },
+        {
+          "time": "12:00",
+          "title": "Castelo de São Jorge",
+          "ref": "LIS-CAS-01"
+        },
+        {
+          "time": "13:45",
+          "title": "Descenso por Alfama",
+          "ref": "LIS-ALF-01"
+        },
+        {
+          "time": "14:30",
+          "title": "Comida",
+          "ref": "LIS-COM-01"
+        },
+        {
+          "time": "16:30",
+          "title": "Praça do Comércio y Rua Augusta",
+          "ref": "LIS-BAI-01"
+        },
+        {
+          "time": "18:00",
+          "title": "Chiado",
+          "ref": "LIS-CHI-01"
+        },
+        {
+          "time": "20:00",
+          "title": "Regreso al camping",
+          "ref": "LIS-TRA-01"
+        }
+      ]
+    },
+    {
+      "id": "D02",
+      "date": "2026-08-12",
+      "title": "Belém y Lisboa creativa",
+      "summary": "Jerónimos · Pastéis · río · MAAT · LX Factory",
+      "distance": "A pie + transporte público",
+      "duration": "Día completo",
+      "items": [
+        {
+          "time": "09:00",
+          "title": "Salida del camping",
+          "ref": "LIS-TRA-01"
+        },
+        {
+          "time": "10:00",
+          "title": "Monasterio de los Jerónimos",
+          "ref": "LIS-BEL-01"
+        },
+        {
+          "time": "11:30",
+          "title": "Pastéis de Belém",
+          "ref": "LIS-NAT-01"
+        },
+        {
+          "time": "12:15",
+          "title": "Monumento a los Descubrimientos",
+          "ref": "LIS-BEL-01"
+        },
+        {
+          "time": "13:00",
+          "title": "Torre de Belém y paseo",
+          "ref": "LIS-BEL-01"
+        },
+        {
+          "time": "15:30",
+          "title": "Exterior y cubierta del MAAT",
+          "ref": "LIS-MAA-01"
+        },
+        {
+          "time": "17:00",
+          "title": "LX Factory",
+          "ref": "LIS-LXF-01"
+        },
+        {
+          "time": "20:00",
+          "title": "Regreso al camping",
+          "ref": "LIS-TRA-01"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "LIS-CAM-01",
+      "city": "Lisboa",
+      "zone": "Camping",
+      "title": "Lisboa Camping",
+      "icon": "🚐",
+      "quick": [
+        "Base durante 3 noches",
+        "No mover la camper por la ciudad",
+        "Transporte público desde la entrada"
+      ],
+      "detail": "Base prevista para las tres noches de Lisboa. La estrategia es dejar la camper instalada y realizar todas las visitas en transporte público. Conviene confirmar horario de recepción, acceso nocturno y conexión exacta con Carris pocos días antes del viaje.",
+      "tags": [
+        "camper",
+        "alojamiento",
+        "servicios"
+      ]
+    },
+    {
+      "id": "LIS-TRA-01",
+      "city": "Lisboa",
+      "zone": "Transporte",
+      "title": "Transporte público",
+      "icon": "🚋",
+      "quick": [
+        "1 Navegante Ocasional por persona",
+        "Zapping para improvisar",
+        "Bono 24 h cuando haya muchos viajes"
+      ],
+      "detail": "Comprar una tarjeta Navegante Ocasional para cada viajero. El saldo Zapping ofrece máxima flexibilidad. En días con bus, metro, tranvías y funiculares puede compensar el bono Carris + Metro de 24 horas. La tarjeta no se comparte. Revisar tarifas y líneas exactas antes del viaje.",
+      "tags": [
+        "metro",
+        "bus",
+        "tranvía",
+        "navegante"
+      ]
+    },
+    {
+      "id": "LIS-FDL-01",
+      "city": "Lisboa",
+      "zone": "Alfama",
+      "title": "Feira da Ladra",
+      "icon": "🧭",
+      "quick": [
+        "Martes y sábados",
+        "1 h 30 min",
+        "Gratis · llevar efectivo"
+      ],
+      "detail": "Mercadillo histórico de antigüedades y segunda mano. Misión para las niñas: localizar un juguete antiguo, una moneda, un libro raro, una muñeca y un objeto misterioso. Llegar temprano ayuda a evitar el calor y las aglomeraciones.",
+      "tags": [
+        "mercadillo",
+        "niñas",
+        "gratis",
+        "antigüedades"
+      ]
+    },
+    {
+      "id": "LIS-ALF-01",
+      "city": "Lisboa",
+      "zone": "Alfama",
+      "title": "Alfama",
+      "icon": "🏘️",
+      "quick": [
+        "Barrio más antiguo",
+        "Recorrerlo bajando",
+        "Azulejos, fado y miradores"
+      ],
+      "detail": "La mejor forma de recorrer Alfama con niñas es comenzar arriba y bajar tranquilamente. Observar azulejos, puertas, ropa tendida, pequeñas plazas, gatos y músicos. Es una zona de pavimento irregular: calzado cómodo y agua.",
+      "tags": [
+        "barrio",
+        "paseo",
+        "cultura",
+        "fotografía"
+      ]
+    },
+    {
+      "id": "LIS-CAS-01",
+      "city": "Lisboa",
+      "zone": "Alfama",
+      "title": "Castelo de São Jorge",
+      "icon": "🏰",
+      "quick": [
+        "1 h 30 min",
+        "Grandes vistas",
+        "Pavos reales y murallas"
+      ],
+      "detail": "Visita cultural principal del día histórico. Misiones: encontrar el cañón más grande, contar pavos reales, localizar la mejor vista y hacer la foto familiar. Para reducir cuestas, usar los elevadores públicos de acceso a la zona del castillo o valorar el autobús 737.",
+      "tags": [
+        "castillo",
+        "historia",
+        "niñas",
+        "mirador"
+      ]
+    },
+    {
+      "id": "LIS-BAI-01",
+      "city": "Lisboa",
+      "zone": "Baixa",
+      "title": "Baixa y Praça do Comércio",
+      "icon": "🏛️",
+      "quick": [
+        "Zona llana",
+        "Rua Augusta",
+        "Descanso junto al Tajo"
+      ],
+      "detail": "Área reconstruida tras el terremoto de 1755. Paseo por Praça do Comércio, Arco da Rua Augusta y calles de la Baixa. Buen momento para descansar, observar la calçada portuguesa y explicar cómo se reconstruyó la ciudad.",
+      "tags": [
+        "historia",
+        "plaza",
+        "paseo",
+        "terremoto"
+      ]
+    },
+    {
+      "id": "LIS-CHI-01",
+      "city": "Lisboa",
+      "zone": "Chiado",
+      "title": "Chiado",
+      "icon": "📚",
+      "quick": [
+        "Librerías y cafés",
+        "Ambiente de tarde",
+        "Atajo por Baixa-Chiado"
+      ],
+      "detail": "Barrio cultural y comercial. Se puede aprovechar el paso interior de la estación Baixa-Chiado para evitar parte de la subida. Ideal para librerías, una parada dulce o compras pequeñas.",
+      "tags": [
+        "libros",
+        "compras",
+        "cafés",
+        "paseo"
+      ]
+    },
+    {
+      "id": "LIS-BEL-01",
+      "city": "Lisboa",
+      "zone": "Belém",
+      "title": "Belém",
+      "icon": "⚓",
+      "quick": [
+        "Medio día",
+        "Descubrimientos portugueses",
+        "Jerónimos, torre y río"
+      ],
+      "detail": "Zona monumental vinculada a la expansión marítima portuguesa. Priorizar el Monasterio de los Jerónimos, el Monumento a los Descubrimientos y el paseo exterior junto a la Torre de Belém. Alternar cultura con descansos junto al río.",
+      "tags": [
+        "historia",
+        "monumentos",
+        "río",
+        "familia"
+      ]
+    },
+    {
+      "id": "LIS-NAT-01",
+      "city": "Lisboa",
+      "zone": "Belém",
+      "title": "Pastéis de Belém",
+      "icon": "🥐",
+      "quick": [
+        "Parada dulce",
+        "Comparar con otros pastéis",
+        "Puntuar del 1 al 10"
+      ],
+      "detail": "Parada gastronómica para probar el pastel más conocido de Belém. Propuesta familiar: cada persona lo puntúa del 1 al 10 y al final del viaje se elige el mejor pastel de nata de Portugal.",
+      "tags": [
+        "dulce",
+        "comida",
+        "niñas"
+      ]
+    },
+    {
+      "id": "LIS-MAA-01",
+      "city": "Lisboa",
+      "zone": "Belém",
+      "title": "MAAT exterior",
+      "icon": "🎨",
+      "quick": [
+        "Arquitectura contemporánea",
+        "Exterior y cubierta",
+        "Buenas fotos"
+      ],
+      "detail": "El exterior del museo y su cubierta ofrecen una pausa visual contemporánea junto al Tajo. Las exposiciones interiores pueden ser de pago; la ficha se centra en la experiencia exterior.",
+      "tags": [
+        "arte",
+        "arquitectura",
+        "gratis",
+        "fotografía"
+      ]
+    },
+    {
+      "id": "LIS-LXF-01",
+      "city": "Lisboa",
+      "zone": "Alcântara",
+      "title": "LX Factory",
+      "icon": "🎨",
+      "quick": [
+        "Arte urbano",
+        "Tiendas y librería",
+        "Ambiente familiar"
+      ],
+      "detail": "Antiguo complejo industrial transformado en espacio creativo. Interesa por los murales, tiendas, cafeterías y la librería. Buen cierre de un día cultural más relajado.",
+      "tags": [
+        "arte urbano",
+        "tiendas",
+        "libros",
+        "familia"
+      ]
+    },
+    {
+      "id": "LIS-COM-01",
+      "city": "Lisboa",
+      "zone": "Comida",
+      "title": "Restaurantes candidatos",
+      "icon": "🍽️",
+      "quick": [
+        "Lisboa Tu & Eu",
+        "Zé da Mouraria",
+        "As Bifanas do Afonso"
+      ],
+      "detail": "Lista provisional: Lisboa Tu & Eu para cocina portuguesa y ambiente pequeño; Zé da Mouraria para platos abundantes y bacalao; As Bifanas do Afonso para una comida rápida y económica. Confirmar horarios, descansos semanales y reservas antes del viaje.",
+      "tags": [
+        "restaurantes",
+        "económico",
+        "bacalao",
+        "bifana"
+      ]
+    }
+  ]
+}
