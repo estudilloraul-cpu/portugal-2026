@@ -15,6 +15,12 @@ const cats=['Combustible','Peajes','Pernoctas','Supermercado','Restaurantes','Ac
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 const money=n=>Number(n||0).toLocaleString('es-ES',{style:'currency',currency:'EUR'});
+const PHOTO_MAP=window.PHOTO_MAP||{};
+function dayPhotos(id){return PHOTO_MAP[id]||['hero.webp']}
+function photoForDay(id,index=0){const p=dayPhotos(id);return p[index%p.length]||p[0]||'hero.webp'}
+function activityTitle(item){const p=item.split(' · ');return p.slice(1).join(' · ')||item}
+function activityTime(item){return item.split(' · ')[0]||''}
+
 
 function current(){
  const now=new Date(),start=new Date('2026-08-10T00:00:00'),end=new Date('2026-08-19T23:59:59');
@@ -31,31 +37,189 @@ function topbar(){
  return `<header class="topbar"><div class="brand"><div class="brand-mark">P</div><div><strong>BITÁCORA</strong><span>PORTUGAL 2026</span></div></div><div class="avatar">RE</div></header>`;
 }
 function app(){
- const content=state.city?cityDetail(state.city):state.tab==='today'?today():state.tab==='route'?route():state.tab==='girls'?girls():state.tab==='journal'?journal():more();
+ const content=state.modal?.dayPlan?dayPlan(state.modal.dayPlan):state.city?cityDetail(state.city):state.tab==='today'?today():state.tab==='route'?route():state.tab==='girls'?girls():state.tab==='journal'?journal():more();
  $('#app').innerHTML=`<div class="app">${topbar()}<main class="main">${content}</main>${nav()}${state.modal?modal():''}</div>`;
  bind();
 }
 function today(){
  const c=current(),d=c.day,e=state.journal[d.id]||{};
+ const idx=Math.max(0,state.days.findIndex(x=>x.id===d.id));
+ const next=state.days[Math.min(idx+1,state.days.length-1)];
+ const progress=Math.round(((idx+1)/state.days.length)*100);
  const title=c.mode==='before'?`Faltan ${c.left} días`:c.mode==='after'?'Portugal ya forma parte de vuestra historia':d.city;
- const subtitle=c.mode==='during'?d.title:'Diez días, siete destinos y una bitácora para recordarlo todo.';
- return `<section class="hero"><img src="./images/${d.image}" alt=""><div class="hero-content"><span class="eyebrow">${c.mode==='during'?'HOY · '+d.date:'PORTUGAL 2026'}</span><h1>${esc(title)}</h1><p>${esc(subtitle)}</p><div class="hero-actions"><button class="btn btn-primary" data-tab="route">Ver itinerario</button><button class="btn btn-light" data-tab="journal">Abrir bitácora</button></div></div></section>
- <section class="section"><div class="trip-summary"><div class="stat"><strong>10</strong><span>días</span></div><div class="stat"><strong>8</strong><span>ciudades</span></div><div class="stat"><strong>2.640</strong><span>km recorrido</span></div></div></section>
- <section class="section"><div class="section-head"><div><span class="eyebrow">JORNADA DESTACADA</span><h2>${esc(d.title)}</h2></div><button data-tab="route">Editar</button></div><article class="today-card"><div class="today-title"><div><span class="pill">${esc(d.city)}</span><p class="muted">${esc(d.meta)}</p></div></div><div class="today-list">${d.items.map(x=>{const p=x.split(' · ');return `<div><b>${esc(p[0])}</b><i></i><span>${esc(p.slice(1).join(' · '))}</span></div>`}).join('')}</div></article></section>
- <section class="section"><div class="section-head"><div><span class="eyebrow">DESTINOS</span><h2>Tu viaje de un vistazo</h2></div><button data-tab="route">Ver todos</button></div><div class="city-scroll">${cities.map(cityCard).join('')}</div></section>
- <section class="section"><div class="section-head"><div><span class="eyebrow">RECUERDO DEL DÍA</span><h2>${e.best?'Ya hay una nota guardada':'¿Qué recordaréis hoy?'}</h2></div><button data-tab="journal">Escribir</button></div><article class="card"><strong>${esc(e.best||'Lo mejor del día aparecerá aquí.')}</strong><p class="muted">${esc(e.learned||'Al final de cada jornada podéis dejar una pequeña nota familiar.')}</p></article></section>`;
+ const subtitle=c.mode==='during'?d.title:'Diez días, ocho ciudades y una bitácora para recordarlo todo.';
+ return `
+ <section class="home-hero-shell">
+   <article class="home-hero">
+     <img src="./images/${d.image}" alt="">
+     <div class="home-hero-overlay"></div>
+     <div class="home-hero-content">
+       <span class="date-chip">${c.mode==='during'?`Día ${idx+1} · ${new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'long'}).format(new Date(d.date+'T12:00:00'))}`:'PORTUGAL 2026'}</span>
+       <h1>${esc(title)}</h1>
+       <p>${esc(subtitle)}</p>
+       <button class="home-cta" data-tab="route">Ver plan del día <span>›</span></button>
+     </div>
+   </article>
+   <div class="hero-dots" aria-label="Progreso visual"><i class="active"></i><i></i><i></i></div>
+ </section>
+
+ <section class="section home-summary-section">
+   <div class="section-head compact-head"><div><h2>Resumen del viaje</h2></div></div>
+   <div class="home-metrics">
+     <article><span class="metric-icon">⌖</span><strong>2.640 km</strong><small>Recorrido</small></article>
+     <article><span class="metric-icon">□</span><strong>10 días</strong><small>10–19 agosto</small></article>
+     <article><span class="metric-icon">♜</span><strong>8 ciudades</strong><small>Por descubrir</small></article>
+     <article><span class="metric-icon">✥</span><strong>64 misiones</strong><small>Greta & Maria</small></article>
+   </div>
+ </section>
+
+ <section class="section next-stop-section">
+   <div class="section-head compact-head"><div><h2>Próxima parada</h2></div></div>
+   <article class="next-stop-card" data-tab="route">
+     <img src="./images/${next.image}" alt="">
+     <div>
+       <strong>${esc(next.city)}</strong>
+       <span>${idx+1>=state.days.length?'Fin del viaje':`Mañana · ${new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'long'}).format(new Date(next.date+'T12:00:00'))}`}</span>
+       <p>${esc(next.meta)}</p>
+     </div>
+     <b>›</b>
+   </article>
+ </section>
+
+ <section class="section progress-section">
+   <div class="progress-card">
+     <div class="progress-copy">
+       <span class="eyebrow">PROGRESO DEL VIAJE</span>
+       <strong>${progress}% completado</strong>
+       <small>${idx+1} de ${state.days.length} jornadas</small>
+     </div>
+     <div class="progress-track"><i style="width:${progress}%"></i></div>
+   </div>
+ </section>
+
+ <section class="section">
+   <div class="section-head"><div><span class="eyebrow">HOY</span><h2>${esc(d.title)}</h2></div><button data-tab="journal">Escribir</button></div>
+   <article class="today-card refined">
+     <div class="today-list">${d.items.map(x=>{const p=x.split(' · ');return `<div><b>${esc(p[0])}</b><i></i><span>${esc(p.slice(1).join(' · '))}</span></div>`}).join('')}</div>
+   </article>
+ </section>
+
+ <section class="section">
+   <div class="section-head"><div><span class="eyebrow">DESTINOS</span><h2>Explora la ruta</h2></div><button data-tab="route">Ver todos</button></div>
+   <div class="city-scroll">${cities.map(cityCard).join('')}</div>
+ </section>
+
+ <section class="section">
+   <div class="section-head"><div><span class="eyebrow">RECUERDO DEL DÍA</span><h2>${e.best?'Ya hay una nota guardada':'¿Qué recordaréis hoy?'}</h2></div><button data-tab="journal">Abrir</button></div>
+   <article class="memory-card">
+     <span class="memory-mark">“</span>
+     <strong>${esc(e.best||'Lo mejor del día aparecerá aquí.')}</strong>
+     <p>${esc(e.learned||'Al final de cada jornada podéis guardar una pequeña nota familiar.')}</p>
+   </article>
+ </section>`;
 }
 function cityCard(c){return `<article class="city-card" data-city="${c.id}"><img src="./images/${c.image}" alt=""><div><span class="eyebrow" style="color:${c.color}">${c.days}</span><h3>${c.name}</h3><strong>${c.subtitle}</strong><p>${c.desc}</p><div class="city-meta"><span>${c.places} lugares</span><span>Abrir →</span></div></div></article>`}
 function route(){
- return `<section class="section"><div class="section-head"><div><span class="eyebrow">ITINERARIO</span><h2>10 días por carretera</h2></div></div><p class="muted">Una vista cronológica y editable, inspirada en las listas de viaje de Wanderlog.</p><div class="route">${state.days.map((d,i)=>`<article class="route-item ${i<2?'complete':''}"><span class="eyebrow">${new Intl.DateTimeFormat('es-ES',{weekday:'short',day:'numeric',month:'short'}).format(new Date(d.date+'T12:00:00'))}</span><strong>${esc(d.title)}</strong><small>${esc(d.meta)}</small>${d.items.map(x=>`<small>· ${esc(x)}</small>`).join('')}<button data-edit-day="${d.id}">Editar día</button></article>`).join('')}</div></section>`;
+ const c=current(),currentId=c.day.id;
+ return `<section class="photo-route-page">
+   <article class="route-photo-hero">
+     <img src="./images/${photoForDay(currentId,0)}" alt="">
+     <div class="route-photo-shade"></div>
+     <div class="route-photo-copy">
+       <span class="eyebrow">RUTA PORTUGAL 2026</span>
+       <h1>10 días por carretera</h1>
+       <p>2.640 km · 8 ciudades · recuerdos en familia</p>
+     </div>
+   </article>
+
+   <section class="section route-photo-content">
+     <div class="section-head"><div><span class="eyebrow">ITINERARIO</span><h2>La ruta, día a día</h2></div><span class="route-distance">10–19 agosto</span></div>
+     <div class="journey-progress"><i style="width:${Math.round(((Math.max(0,state.days.findIndex(d=>d.id===currentId))+1)/state.days.length)*100)}%"></i></div>
+
+     <div class="photo-timeline">
+       ${state.days.map((d,i)=>{
+         const isToday=d.id===currentId&&c.mode==='during';
+         const completed=c.mode==='after'||(c.mode==='during'&&new Date(d.date)<new Date(c.day.date));
+         return `<article class="photo-route-card ${isToday?'is-today':''} ${completed?'is-complete':''}">
+           <img class="photo-route-thumb" src="./images/${photoForDay(d.id,0)}" alt="">
+           <div class="photo-route-body">
+             <div class="photo-route-date">
+               <span>Día ${i+1}</span>
+               <small>${new Intl.DateTimeFormat('es-ES',{weekday:'short',day:'numeric',month:'short'}).format(new Date(d.date+'T12:00:00'))}</small>
+               ${isToday?'<b>HOY</b>':completed?'<b>HECHO</b>':''}
+             </div>
+             <h3>${esc(d.title)}</h3>
+             <p>${esc(d.meta)}</p>
+             <div class="route-photo-preview">
+               ${d.items.slice(0,3).map((item,n)=>`<div>
+                 <img src="./images/${photoForDay(d.id,n+1)}" alt="">
+                 <span><b>${esc(activityTime(item))}</b>${esc(activityTitle(item))}</span>
+               </div>`).join('')}
+             </div>
+             <div class="route-actions">
+               <button data-edit-day="${d.id}">Editar jornada</button>
+               <button data-open-day="${d.id}">Ver plan completo</button>
+             </div>
+           </div>
+         </article>`;
+       }).join('')}
+     </div>
+   </section>
+ </section>`;
 }
+
+function dayPlan(id){
+ const d=state.days.find(x=>x.id===id)||state.days[0];
+ return `<section class="day-plan-page">
+   <article class="day-plan-hero">
+     <img src="./images/${photoForDay(d.id,0)}" alt="">
+     <div class="day-plan-gradient"></div>
+     <button class="round-back" data-close-day>‹</button>
+     <div class="day-plan-title">
+       <span>${new Intl.DateTimeFormat('es-ES',{weekday:'long',day:'numeric',month:'long'}).format(new Date(d.date+'T12:00:00'))}</span>
+       <h1>${esc(d.city)}</h1>
+       <p>${esc(d.meta)}</p>
+     </div>
+   </article>
+   <section class="section">
+     <div class="section-head"><div><span class="eyebrow">PLAN DEL DÍA</span><h2>${esc(d.title)}</h2></div><button data-edit-day="${d.id}">Editar</button></div>
+     <div class="day-agenda-photo">
+       ${d.items.map((item,i)=>`<article>
+         <div class="agenda-time">${esc(activityTime(item))}</div>
+         <div class="agenda-line"><i></i></div>
+         <div class="agenda-photo-card">
+           <img src="./images/${photoForDay(d.id,i+1)}" alt="">
+           <div><strong>${esc(activityTitle(item))}</strong><small>${i===0?'Comienza la aventura':i===d.items.length-1?'Última parada del día':'Siguiente experiencia'}</small></div>
+         </div>
+       </article>`).join('')}
+     </div>
+     <button class="complete-day-btn" data-complete-day="${d.id}">${state.journal[d.id]?.complete?'Día completado':'Marcar día como completado'}</button>
+   </section>
+ </section>`;
+}
+
 function girls(){
  const g=state.girl,data=missions[g],done=Object.values(state.girls[g]||{}).filter(Boolean).length;
  return `<section class="section"><div class="section-head"><div><span class="eyebrow">AVENTURAS</span><h2>Greta & Maria</h2></div></div><div class="girl-tabs"><button data-girl="greta" class="${g==='greta'?'active':''}">Greta</button><button data-girl="maria" class="${g==='maria'?'active':''}">Maria</button></div><div class="profile"><div class="profile-icon">${g==='greta'?'G':'M'}</div><div><strong>${g==='greta'?'Greta':'Maria'}</strong><span>${g==='greta'?'11 años · cultura y fotografía':'7 años · búsqueda y dibujo'}</span><span>${done} aventuras completadas</span></div></div>${data.map(([city,text],i)=>{const id=g+'-'+i,ok=!!state.girls[g]?.[id];return `<article class="mission ${ok?'done':''}" data-mission="${id}"><div class="mission-check">${ok?'✓':''}</div><div><strong>${city}</strong><span>${text}</span></div></article>`}).join('')}</section>`;
 }
 function journal(){
  const selected=state.modal?.day||state.days[0].id,d=state.days.find(x=>x.id===selected),e=state.journal[selected]||{};
- return `<section class="section"><div class="section-head"><div><span class="eyebrow">BITÁCORA FAMILIAR</span><h2>Un recuerdo por día</h2></div></div><div class="subtabs">${state.days.map(x=>`<button data-jday="${x.id}" class="${x.id===selected?'active':''}">${new Date(x.date+'T12:00:00').getDate()}</button>`).join('')}</div><article class="card"><span class="eyebrow">${d.date} · ${esc(d.city)}</span><h3>${esc(d.title)}</h3><label class="field">Lo mejor del día<textarea data-jfield="best" data-day="${d.id}" placeholder="El momento que más recordaréis...">${esc(e.best||'')}</textarea></label><label class="field">Qué hemos aprendido<textarea data-jfield="learned" data-day="${d.id}" placeholder="Una curiosidad, una historia o algo nuevo...">${esc(e.learned||'')}</textarea></label><label class="field">Qué repetiríamos<textarea data-jfield="repeat" data-day="${d.id}" placeholder="Un lugar, una comida o una experiencia...">${esc(e.repeat||'')}</textarea></label><label class="field">Valoración<select data-jfield="score" data-day="${d.id}"><option value="">Sin valorar</option>${[1,2,3,4,5].map(n=>`<option value="${n}" ${String(e.score)===String(n)?'selected':''}>${n} / 5</option>`).join('')}</select></label></article></section>`;
+ return `<section class="journal-photo-page">
+   <article class="journal-photo-hero">
+     <img src="./images/${photoForDay(d.id,1)}" alt="">
+     <div class="journal-photo-overlay"></div>
+     <div><span>${new Intl.DateTimeFormat('es-ES',{weekday:'long',day:'numeric',month:'long'}).format(new Date(d.date+'T12:00:00'))}</span><h1>${esc(d.city)}</h1></div>
+   </article>
+   <section class="section">
+     <div class="subtabs journal-days">${state.days.map(x=>`<button data-jday="${x.id}" class="${x.id===selected?'active':''}">${new Date(x.date+'T12:00:00').getDate()}</button>`).join('')}</div>
+     <article class="journal-story-card">
+       <label class="journal-photo-field"><span>Lo mejor del día</span><textarea data-jfield="best" data-day="${d.id}" placeholder="Las vistas, una comida, un momento juntos...">${esc(e.best||'')}</textarea></label>
+       <label class="journal-photo-field"><span>Qué hemos aprendido</span><textarea data-jfield="learned" data-day="${d.id}" placeholder="Una historia, una curiosidad o algo que no sabíamos...">${esc(e.learned||'')}</textarea></label>
+       <label class="journal-photo-field"><span>Qué repetiríamos</span><textarea data-jfield="repeat" data-day="${d.id}" placeholder="Ese lugar al que volveríamos sin dudar...">${esc(e.repeat||'')}</textarea></label>
+       <label class="journal-photo-field score-field"><span>Valoración del día</span><select data-jfield="score" data-day="${d.id}"><option value="">Sin valorar</option>${[1,2,3,4,5].map(n=>`<option value="${n}" ${String(e.score)===String(n)?'selected':''}>${'★'.repeat(n)} · ${n}/5</option>`).join('')}</select></label>
+     </article>
+   </section>
+ </section>`;
 }
 function more(){
  const total=state.expenses.reduce((a,b)=>a+Number(b.amount||0),0);
@@ -67,8 +231,33 @@ function expensesView(total){
 function checksView(){return `<article class="card"><h3>Antes de arrancar</h3>${checks.map(x=>`<label class="check"><input type="checkbox" data-check="${esc(x)}" ${state.checks[x]?'checked':''}><span>${x}</span></label>`).join('')}<button class="btn btn-light" id="clear-checks">Desmarcar todo</button></article>`}
 function backupView(){return `<article class="card"><h3>Copia de seguridad</h3><p class="muted">Incluye itinerario, diario, gastos, misiones y checklist.</p><button class="btn btn-primary" id="export">Exportar datos</button><label class="btn btn-light" style="display:inline-block">Importar<input id="import" hidden type="file" accept="application/json"></label></article>`}
 function cityDetail(id){
- const c=cities.find(x=>x.id===id);const imgs=[c.image, id==='lisboa'?'alfama.webp':id==='porto'?'porto-saobento.webp':id==='aveiro'?'costa-nova.webp':id==='nazare'?'nazare-sitio.webp':id==='sintra'?'pena.webp':id==='obidos'?'obidos-centro.webp':'burgos-centro.webp'];
- return `<section class="city-detail-hero"><img src="./images/${c.image}"><button data-back>‹</button><div><span class="eyebrow">${c.days}</span><h1>${c.name}</h1><p>${c.subtitle}</p></div></section><section class="section"><p class="muted">${c.desc}</p><div class="trip-summary"><div class="stat"><strong>${c.places}</strong><span>lugares</span></div><div class="stat"><strong>${c.days.split(' ')[0]}</strong><span>agosto</span></div><div class="stat"><strong>Familia</strong><span>tipo de viaje</span></div></div></section><section class="section"><div class="section-head"><div><span class="eyebrow">IMPRESCINDIBLES</span><h2>Qué ver</h2></div></div><div class="place-grid">${imgs.map((im,i)=>`<article class="place"><img src="./images/${im}"><div><strong>${['Paseo principal','Lugar destacado','Parada familiar'][i]}</strong><small>${c.name}</small></div></article>`).join('')}</div></section>`;
+ const c=cities.find(x=>x.id===id);
+ const related=state.days.filter(d=>d.city.toLowerCase().includes(c.name.toLowerCase())||d.title.toLowerCase().includes(c.name.toLowerCase()));
+ const baseDay=related[0]||state.days[0];
+ const imgs=[c.image,...dayPhotos(baseDay.id).slice(1),c.image].slice(0,5);
+ return `<section class="city-photo-page">
+   <article class="city-photo-hero">
+     <img src="./images/${c.image}" alt="">
+     <div class="city-photo-shade"></div>
+     <button class="round-back" data-back>‹</button>
+     <div class="city-photo-copy"><span>${c.days}</span><h1>${c.name}</h1><p>${c.subtitle}</p></div>
+   </article>
+   <section class="section">
+     <p class="city-intro">${c.desc}</p>
+     <div class="photo-gallery-grid">
+       ${imgs.map((im,i)=>`<figure class="${i===0?'featured':''}"><img src="./images/${im}" alt=""><figcaption>${['Vista principal','Lugar imprescindible','Una parada especial','Detalle de la ciudad','Momento para recordar'][i]}</figcaption></figure>`).join('')}
+     </div>
+   </section>
+   <section class="section">
+     <div class="section-head"><div><span class="eyebrow">EXPERIENCIAS</span><h2>Qué vivir en ${c.name}</h2></div></div>
+     <div class="experience-photo-list">
+       ${(related.length?related:[baseDay]).flatMap(d=>d.items.slice(0,3).map((item,i)=>({d,item,i}))).slice(0,5).map(({d,item,i})=>`<article>
+         <img src="./images/${photoForDay(d.id,i+1)}" alt="">
+         <div><strong>${esc(activityTitle(item))}</strong><span>${esc(d.title)}</span><small>${esc(activityTime(item))}</small></div>
+       </article>`).join('')}
+     </div>
+   </section>
+ </section>`;
 }
 function modal(){
  const d=state.days.find(x=>x.id===state.modal.id);
@@ -83,6 +272,10 @@ function bind(){
  document.querySelectorAll('[data-jfield]').forEach(el=>el.oninput=()=>{const id=el.dataset.day;state.journal[id]={...(state.journal[id]||{}),[el.dataset.jfield]:el.value};put(LS.journal,state.journal)});
  document.querySelectorAll('[data-jday]').forEach(b=>b.onclick=()=>{state.modal={day:b.dataset.jday};app()});
  document.querySelectorAll('[data-edit-day]').forEach(b=>b.onclick=()=>{state.modal={id:b.dataset.editDay};app()});
+ document.querySelectorAll('[data-open-day]').forEach(b=>b.onclick=()=>{state.modal={dayPlan:b.dataset.openDay};app()});
+ const closeDay=$('[data-close-day]');if(closeDay)closeDay.onclick=()=>{state.modal=null;app()};
+ document.querySelectorAll('[data-complete-day]').forEach(b=>b.onclick=()=>{const id=b.dataset.completeDay;state.journal[id]={...(state.journal[id]||{}),complete:!state.journal[id]?.complete};put(LS.journal,state.journal);app()});
+
  const close=$('[data-close]');if(close)close.onclick=()=>{state.modal=null;app()};
  const save=$('#save-day');if(save)save.onclick=()=>{const d=state.days.find(x=>x.id===state.modal.id);d.title=$('#ed-title').value;d.meta=$('#ed-meta').value;document.querySelectorAll('[data-ed-item]').forEach(x=>d.items[Number(x.dataset.edItem)]=x.value);put(LS.days,state.days);state.modal=null;app()};
  document.querySelectorAll('[data-more]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-more]').forEach(x=>x.classList.remove('active'));b.classList.add('active');$('#more-content').innerHTML=b.dataset.more==='expenses'?expensesView(state.expenses.reduce((a,x)=>a+Number(x.amount||0),0)):b.dataset.more==='checks'?checksView():backupView();bindMore()});
