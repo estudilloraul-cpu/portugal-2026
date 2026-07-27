@@ -1,7 +1,7 @@
 {
   "name": "VW 340 · Bitácora Portugal 2026",
   "short_name": "VW 340",
-  "start_url": "./?v=61",
+  "start_url": "./?v=62",
   "display": "standalone",
   "background_color": "#f7f2ea",
   "theme_color": "#f7f2ea",
@@ -19,5 +19,5 @@
       "purpose": "any maskable"
     }
   ],
-  "id": "./?app=vw340-v61"
+  "id": "./?app=vw340-v62"
 }

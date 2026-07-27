@@ -9,41 +9,23 @@
   <title>VW 340 · Portugal 2026</title>
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="apple-touch-icon" href="./apple-touch-icon.png">
-  <link rel="stylesheet" href="./styles-v61.css?v=61">
+  <link rel="stylesheet" href="./styles-v62.css?v=62">
 
-  <script>
-    (function () {
-      function closeSplash() {
-        var splash = document.getElementById('splash');
-        if (splash) {
-          splash.classList.add('hide');
-          window.setTimeout(function () {
-            if (splash && splash.parentNode) splash.parentNode.removeChild(splash);
-          }, 650);
-        }
-      }
-      window.__closeVW340Splash = closeSplash;
-      window.setTimeout(closeSplash, 1800);
-      window.addEventListener('error', function () {
-        window.setTimeout(closeSplash, 150);
+<script>
+(function(){
+  try {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(regs){
+        regs.forEach(function(reg){ reg.unregister(); });
       });
-      try {
-        if (!localStorage.getItem('vw340-v61-cache-cleaned')) {
-          localStorage.setItem('vw340-v61-cache-cleaned', '1');
-          if ('caches' in window) {
-            caches.keys().then(function (keys) {
-              return Promise.all(keys.map(function (key) { return caches.delete(key); }));
-            });
-          }
-          if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function (regs) {
-              return Promise.all(regs.map(function (reg) { return reg.unregister(); }));
-            });
-          }
-        }
-      } catch (e) {}
-    })();
-  </script>
+    }
+  } catch(e) {}
+  window.setTimeout(function(){
+    var splash=document.getElementById('splash');
+    if(splash){ splash.classList.add('hide'); }
+  },1500);
+})();
+</script>
 
 </head>
 <body>
@@ -52,8 +34,37 @@
     <strong>BITÁCORA</strong>
     <span>PORTUGAL 2026</span>
   </div>
-  <div id="app"></div>
-  <script src="./data-v61.js?v=61"></script>
-  <script src="./app-v61.js?v=61"></script>
+  <div id="app">
+    <div class="fallback-app">
+      <header class="fallback-header">
+        <span>☰</span>
+        <div><strong>VW 340</strong><small>PORTUGAL 2026</small></div>
+        <span>♢</span>
+      </header>
+      <main>
+        <article class="fallback-hero">
+          <img src="./images/lisboa.webp" alt="Lisboa">
+          <div>
+            <span>Día 2 · 11 agosto</span>
+            <h1>Lisboa</h1>
+            <p>Descubre el encanto de la capital portuguesa</p>
+            <b>Cargando aplicación…</b>
+          </div>
+        </article>
+        <section class="fallback-section">
+          <h2>Resumen del viaje</h2>
+          <div class="fallback-metrics">
+            <div><strong>2.640 km</strong><small>Recorrido</small></div>
+            <div><strong>10 días</strong><small>10–19 agosto</small></div>
+            <div><strong>8 ciudades</strong><small>Por descubrir</small></div>
+            <div><strong>64 misiones</strong><small>Greta & Maria</small></div>
+          </div>
+        </section>
+        <p class="fallback-help">Si este mensaje continúa más de unos segundos, falta subir alguno de los archivos de la versión 6.2.</p>
+      </main>
+    </div>
+  </div>
+  <script src="./data-v62.js?v=62"></script>
+  <script src="./app-v62.js?v=62"></script>
 </body>
 </html>
