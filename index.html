@@ -9,7 +9,42 @@
   <title>VW 340 · Portugal 2026</title>
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="apple-touch-icon" href="./apple-touch-icon.png">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles-v61.css?v=61">
+
+  <script>
+    (function () {
+      function closeSplash() {
+        var splash = document.getElementById('splash');
+        if (splash) {
+          splash.classList.add('hide');
+          window.setTimeout(function () {
+            if (splash && splash.parentNode) splash.parentNode.removeChild(splash);
+          }, 650);
+        }
+      }
+      window.__closeVW340Splash = closeSplash;
+      window.setTimeout(closeSplash, 1800);
+      window.addEventListener('error', function () {
+        window.setTimeout(closeSplash, 150);
+      });
+      try {
+        if (!localStorage.getItem('vw340-v61-cache-cleaned')) {
+          localStorage.setItem('vw340-v61-cache-cleaned', '1');
+          if ('caches' in window) {
+            caches.keys().then(function (keys) {
+              return Promise.all(keys.map(function (key) { return caches.delete(key); }));
+            });
+          }
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function (regs) {
+              return Promise.all(regs.map(function (reg) { return reg.unregister(); }));
+            });
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
+
 </head>
 <body>
   <div id="splash" class="splash">
@@ -18,7 +53,7 @@
     <span>PORTUGAL 2026</span>
   </div>
   <div id="app"></div>
-  <script src="./data.js"></script>
-  <script src="./app.js"></script>
+  <script src="./data-v61.js?v=61"></script>
+  <script src="./app-v61.js?v=61"></script>
 </body>
 </html>
