@@ -24,3 +24,80 @@ button,input,textarea,select{font:inherit}.app{min-height:100vh;padding-bottom:8
 @media(min-width:760px){
  .hero{height:520px}.hero h1{font-size:62px}.city-card{flex-basis:360px}.trip-summary{max-width:520px}.form-grid{grid-template-columns:1fr 1fr}.place-grid{grid-template-columns:repeat(3,1fr)}.modal{align-items:center;justify-content:center}.modal>div{max-width:650px;border-radius:25px}.bottom-nav{left:50%;transform:translateX(-50%);max-width:760px;border:1px solid var(--line);border-bottom:0;border-radius:22px 22px 0 0}
 }
+
+/* v5.1 · Identidad VW 340 */
+:root{
+  --ink:#151816;
+  --muted:#6f746f;
+  --line:#e3ded5;
+  --soft:#f5efe6;
+  --white:#fffdf9;
+  --brand:#184c3d;
+  --brand-dark:#10382d;
+  --green:#184c3d;
+  --cream:#f4eee5;
+  --cream-2:#fbf7f0;
+  --sand:#e9dcc9;
+  --shadow:0 12px 32px rgba(31,39,34,.08);
+}
+html,body{background:var(--cream-2)}
+body{color:var(--ink)}
+.app{background:var(--cream-2)}
+.splash-screen{
+  position:fixed;z-index:200;inset:0;background:
+  linear-gradient(to bottom,rgba(244,238,229,.20),rgba(244,238,229,.05)),
+  url('./splash-vw340.jpg') center/cover no-repeat;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  padding-top:max(14vh,110px);transition:opacity .55s ease,visibility .55s ease;
+}
+.splash-screen.hide{opacity:0;visibility:hidden}
+.splash-logo{width:min(58vw,330px);aspect-ratio:1;border-radius:32px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.14)}
+.splash-logo img{width:100%;height:100%;object-fit:cover}
+.splash-title{margin-top:26px;font-size:20px;letter-spacing:.22em;font-weight:800}
+.splash-subtitle{font-size:18px;letter-spacing:.15em;margin-top:6px}
+.topbar{background:rgba(251,247,240,.94);border-color:var(--line);justify-content:center;padding-left:62px;padding-right:62px}
+.brand{justify-content:center;text-align:center}
+.brand-mark{display:none}
+.brand strong{font-size:18px;letter-spacing:.08em;text-transform:uppercase}
+.brand span{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.avatar{display:none}
+.topbar:before{
+  content:"☰";position:absolute;left:18px;top:calc(18px + env(safe-area-inset-top));
+  font-size:25px;color:var(--ink)
+}
+.topbar:after{
+  content:"♢";position:absolute;right:20px;top:calc(18px + env(safe-area-inset-top));
+  font-size:23px;color:var(--ink)
+}
+.hero{background:var(--cream);height:390px}
+.hero:after{background:linear-gradient(transparent 20%,rgba(9,19,15,.80))}
+.hero-content{bottom:22px}
+.hero h1{font-size:42px}
+.btn-primary{background:var(--cream);color:var(--ink)}
+.btn-light{background:rgba(255,255,255,.2);color:white;border:1px solid rgba(255,255,255,.55)}
+.trip-summary{grid-template-columns:repeat(4,1fr);gap:8px}
+.stat{background:var(--cream);border-radius:16px;text-align:center;padding:14px 8px}
+.stat strong{font-size:19px}
+.stat span{font-size:10px;line-height:1.25}
+.section-head h2{font-size:25px}
+.city-card,.today-card,.card,.route-item,.profile,.mission,.place{background:var(--white)}
+.city-card{border-radius:22px}
+.city-card img{height:220px}
+.pill{background:var(--cream);color:var(--brand-dark)}
+.today-list i{background:var(--brand)}
+.bottom-nav{background:rgba(251,247,240,.97)}
+.bottom-nav button.active{color:var(--brand)}
+.route-item:before{border-color:var(--brand)}
+.route-item.complete:before{background:var(--brand)}
+.route-item button{background:var(--cream);color:var(--brand-dark)}
+.girl-tabs button.active,.subtabs button.active{background:var(--brand);border-color:var(--brand)}
+.profile{background:var(--cream)}
+.profile-icon{background:var(--sand);color:var(--brand-dark)}
+.btn{border-radius:999px}
+.expense-total{background:linear-gradient(135deg,var(--brand-dark),var(--brand))}
+.city-detail-hero{background:var(--cream)}
+@media(max-width:430px){
+  .trip-summary{grid-template-columns:repeat(2,1fr)}
+  .hero{height:370px}
+  .hero h1{font-size:38px}
+}

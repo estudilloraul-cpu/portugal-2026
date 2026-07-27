@@ -28,7 +28,7 @@ function nav(){
  ].map(([id,ic,l])=>`<button data-tab="${id}" class="${state.tab===id?'active':''}"><i>${ic}</i><span>${l}</span></button>`).join('')}</nav>`;
 }
 function topbar(){
- return `<header class="topbar"><div class="brand"><div class="brand-mark">P</div><div><strong>Portugal 2026</strong><span>Viaje en familia · 10–19 agosto</span></div></div><div class="avatar">RE</div></header>`;
+ return `<header class="topbar"><div class="brand"><div class="brand-mark">P</div><div><strong>BITÁCORA</strong><span>PORTUGAL 2026</span></div></div><div class="avatar">RE</div></header>`;
 }
 function app(){
  const content=state.city?cityDetail(state.city):state.tab==='today'?today():state.tab==='route'?route():state.tab==='girls'?girls():state.tab==='journal'?journal():more();
@@ -40,7 +40,7 @@ function today(){
  const title=c.mode==='before'?`Faltan ${c.left} días`:c.mode==='after'?'Portugal ya forma parte de vuestra historia':d.city;
  const subtitle=c.mode==='during'?d.title:'Diez días, siete destinos y una bitácora para recordarlo todo.';
  return `<section class="hero"><img src="./images/${d.image}" alt=""><div class="hero-content"><span class="eyebrow">${c.mode==='during'?'HOY · '+d.date:'PORTUGAL 2026'}</span><h1>${esc(title)}</h1><p>${esc(subtitle)}</p><div class="hero-actions"><button class="btn btn-primary" data-tab="route">Ver itinerario</button><button class="btn btn-light" data-tab="journal">Abrir bitácora</button></div></div></section>
- <section class="section"><div class="trip-summary"><div class="stat"><strong>10</strong><span>días</span></div><div class="stat"><strong>7</strong><span>destinos</span></div><div class="stat"><strong>2.600+</strong><span>km aprox.</span></div></div></section>
+ <section class="section"><div class="trip-summary"><div class="stat"><strong>10</strong><span>días</span></div><div class="stat"><strong>8</strong><span>ciudades</span></div><div class="stat"><strong>2.640</strong><span>km recorrido</span></div></div></section>
  <section class="section"><div class="section-head"><div><span class="eyebrow">JORNADA DESTACADA</span><h2>${esc(d.title)}</h2></div><button data-tab="route">Editar</button></div><article class="today-card"><div class="today-title"><div><span class="pill">${esc(d.city)}</span><p class="muted">${esc(d.meta)}</p></div></div><div class="today-list">${d.items.map(x=>{const p=x.split(' · ');return `<div><b>${esc(p[0])}</b><i></i><span>${esc(p.slice(1).join(' · '))}</span></div>`}).join('')}</div></article></section>
  <section class="section"><div class="section-head"><div><span class="eyebrow">DESTINOS</span><h2>Tu viaje de un vistazo</h2></div><button data-tab="route">Ver todos</button></div><div class="city-scroll">${cities.map(cityCard).join('')}</div></section>
  <section class="section"><div class="section-head"><div><span class="eyebrow">RECUERDO DEL DÍA</span><h2>${e.best?'Ya hay una nota guardada':'¿Qué recordaréis hoy?'}</h2></div><button data-tab="journal">Escribir</button></div><article class="card"><strong>${esc(e.best||'Lo mejor del día aparecerá aquí.')}</strong><p class="muted">${esc(e.learned||'Al final de cada jornada podéis dejar una pequeña nota familiar.')}</p></article></section>`;
@@ -98,3 +98,10 @@ function bindMore(){
 }
 app();
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js'));
+
+window.addEventListener('load',()=>{
+  window.setTimeout(()=>{
+    const splash=document.getElementById('splash');
+    if(splash)splash.classList.add('hide');
+  },1150);
+});
