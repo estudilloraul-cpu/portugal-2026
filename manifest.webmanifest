@@ -1,11 +1,10 @@
 {
-  "name": "Bitácora · Portugal 2026",
+  "name": "Bitácora Portugal 2026",
   "short_name": "Bitácora",
   "start_url": "./",
-  "scope": "./",
   "display": "standalone",
-  "background_color": "#f2eee5",
-  "theme_color": "#103f4c",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "./icon-192.png",
